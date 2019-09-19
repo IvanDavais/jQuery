@@ -1,10 +1,33 @@
+<!-- This piece of code can show that the ready approach is extra speedy than the window.onload approach. -->
 <!DOCTYPE html>
 <html lang="en">
 <head>
   <meta charset="UTF-8">
-  <title>Document</title>
+  <title></title>
+  <script type='text/javascript' src="js1.12.4/jquery-1.12.4.min.js"></script>
+  <script type="text/javascript">
+    //window.onload
+    window.onload = function(){
+      var oDiv = document.getElementById('div1');
+      alert('Origin js pop up: '+oDiv);
+    }
+
+    //complete writting of ready method
+    //Specify a function to execute when the DOM is fully loaded. 
+    /*$(document).ready(function(){
+      var $div = $('#div1');
+      alert('jQuery pop up: ' + $div);
+    })*/
+
+    //abbreviation of ready method
+    $(function(){
+      var $div = $('#div1');
+      alert('jQuery pop up: '+ $div);
+    })
+
+  </script>
 </head>
 <body>
-  
+  <div id="div1"></div>
 </body>
 </html>
