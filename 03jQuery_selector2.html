@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>jQuery selector</title>
+  <script type="text/javascript" src="js1.12.4/jquery-1.12.4.min.js"></script>
+  <script type="text/javascript">
+    $(function(){
+      /*var $div = $('div');
+      $div.css({'backgroundColor':'gold'});*/
+
+      $('div').css({'backgroundColor':'gold'});
+
+      $('div').has('p').css({'fontSize':'30px'});
+
+      $('div').eq(4).css({'textIndent':'20px'});
+
+      $('div').eq(4).prev().css({'fontSize':'40px'});
+
+      //The 'find' method is aimed at identifing the element which belong to div, however the 'filter' method focus on dig up the div with named 'div1'.
+      $('div').find('.tip').css({'backgroundColor':'red'});
+
+      $('div').filter('.div1').css({'backgroundColor':'#000'});
+    });
+  </script>
+</head>
+<body>
+  <div>1</div>
+  <div><p>2</p></div>
+  <div>3</div>
+  <div>4</div>
+  <div>5</div>
+  <div class="div1">6</div>
+  <div>7<span class="tip">8</span><span>9</span></div>
+</body>
+</html>
