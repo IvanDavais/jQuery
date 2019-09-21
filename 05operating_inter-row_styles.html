@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Document</title>
+  <script type="text/javascript" src="js1.12.4/jquery-1.12.4.min.js"></script>
+  <script type="text/javascript">
+    $(function(){
+      /*
+
+      Notice: Orginal js are not capable of reading the CSS attribute with no definition.
+      var oDiv = document.getElementById('div1');
+      alert(oDiv.style.css.fontSize);
+
+      */
+
+      var $div = $('#div1');
+
+      // read attribute
+      var sTr = $div.css('fontSize');
+      alert(sTr);
+
+      // write attribute
+      $div.css({'color':'red','backgroundColor':'pink','fontSize':'30px'});
+
+      var oDiv = document.getElementById('div1');
+      alert(oDiv.style.css.fontSize);
+    })
+  </script>
+</head>
+<body>
+  <div id="div1">div1</div>
+</body>
+</html>
