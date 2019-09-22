@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>binding click event</title>
+  <script type="text/javascript" src="js1.12.4/jquery-1.12.4.min.js"></script>
+  <script type="text/javascript">
+    //error_prone reminder
+    //As you begin jQuery writing, step one is the usage of $(feature(){}) layout to contain the rest of the operation.
+
+    $(function(){
+      /*
+      //cumbersome method
+      $('#btn01').click(function(){
+        // it can be wrote '.box' or '#div1', each of them are correct.
+        if($('#div1').hasClass('red'))
+        {
+          $('#div1').removeClass('red');
+        }
+        else
+        {
+          $('#div1').addClass('red');
+        }
+      });
+
+      */
+
+      $('#btn01').click(function()
+      {
+        // This method checks the class specified in each element. Add a class if it does not exist,
+        // and delete it if it is already set. This is the so-called switching effect.
+        $('#div1').toggleClass('red');
+      });
+  });
+  </script>
+  <style type="text/css">
+    .box{
+      width: 200px;
+      height: 200px;
+      background-color: yellow;
+    }
+    .red{
+      background-color: red;
+    }
+  </style>
+</head>
+<body>
+  <input type="button" name="" id="btn01" value="Switch div style">
+  <div id="div1" class="box"></div>
+</body>
+</html>
