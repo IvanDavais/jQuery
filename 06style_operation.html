@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>style operation</title>
+  <script type="text/javascript" src="js1.12.4/jquery-1.12.4.min.js"></script>
+  <script type="text/javascript">
+    $(function(){
+      var $div = $('.box');
+
+      //Notice: while using 'addClass' method, there is no need insert '.' before the class name you intend to add.
+      $div.addClass('big');
+
+      $div.addClass('red');
+
+      $div.removeClass('red');
+    });
+  </script>
+  <style type="text/css">
+    .box{
+      width: 100px;
+      height: 100px;
+      background-color: gold;
+    }
+
+    .big{
+      font-size: 30px;
+    }
+
+    .red{
+      color: red;
+    }
+  </style>
+</head>
+<body>
+  <div class="box">This is a div</div>
+</body>
+</html>
