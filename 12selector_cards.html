@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>selector cards</title>
+  <style type="text/css">
+    #btns input{
+      width: 100px;
+      height: 50px;
+      background-color: #ddd;
+      border: 0;
+      margin-bottom: 5px;
+    }
+
+    #btns .current{
+      background-color: gold;
+    }
+
+    #container div{
+      width: 500px;
+      height: 300px;
+      background-color: gold;
+      display: none;
+      text-align: center;
+      line-height: 300px;
+      font-size: 40px;
+    }
+
+    #container .active{
+      display: block;
+    }
+  </style>
+  <script type="text/javascript" src="js1.12.4/jquery-1.12.4.min.js"></script>
+  <script type="text/javascript">
+    $(function(){
+      $('#btns input').click(function(){
+
+        // Notice: if you are going to use 'this' of jQuery, you should use '$()' to contain 'this' keyword.
+        // Cause 'this' belong to origin js, and 'this' is don't have the attribute of 'css' instead of 'style' attribute.
+
+        $(this).addClass('current').siblings().removeClass('current');
+        $('#container div').eq($(this).index()).addClass('active').siblings().removeClass('active');
+    })
+  });
+  </script>
+</head>
+<body>
+  <div id="btns">
+    <input type="button" value="Option 1" class="current">
+    <input type="button" value="Option 2">
+    <input type="button" value="Option 3">
+  </div>
+
+  <div id="container">
+    <div class="active">option 1 content</div>
+    <div>option 2 content</div>
+    <div>option 3 content</div>
+  </div>
+</body>
+</html>

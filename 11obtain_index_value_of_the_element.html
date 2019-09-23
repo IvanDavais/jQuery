@@ -1,0 +1,24 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>obtain the index value of the element</title>
+  <script type="text/javascript" src="js1.12.4/jquery-1.12.4.min.js"></script>
+  <script type="text/javascript">
+    $(function(){
+      alert($('#ul1 li').filter('.example').index());
+    });
+  </script>
+</head>
+<body>
+  <ul id="ul1">
+    <li>1</li>
+    <li>2</li>
+    <li>3</li>
+    <li>4</li>
+    <li class="example">5</li>
+    <li>6</li>
+    <li>7</li>
+  </ul>
+</body>
+</html>
