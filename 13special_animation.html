@@ -1,0 +1,69 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>special effects</title>
+  <style type="text/css">
+    #btn1{
+      width: 100px;
+      height: 50px;
+      background-color: cyan;
+    }
+    #div1{
+      width: 500px;
+      height: 300px;
+      background-color: gold;
+      margin-top: 10px;
+      display: none;
+    }
+  </style>
+  <script type="text/javascript" src="js1.12.4/jquery-1.12.4.min.js"></script>
+  <script type="text/javascript">
+    $(function()
+    {
+      $('#btn1').click(function()
+      {
+
+        // fadeIn
+        /*
+         $('#div1').fadeIn(1000,'swing',function()
+        {
+            alert('completed animation!')
+        });
+        */
+
+
+        //fadeOut
+        // $('#div1').fadeOut();
+
+
+        //fadeToggle
+        /*
+        $('#div1').fadeToggle('1000',function()
+        {
+          alert('complete animtion');
+        });
+        */
+
+        //show: With no parameters, the .show() method is the simplest way to display an element:
+        //$('#div1').show();
+
+        //toggle: Display or hide the matched elements
+        // $('#div1').toggle();
+
+        //slideDown
+        // $('#div1').slideDown();
+
+        //slideToggle
+        $('#div1').slideToggle(1000,'swing',function(){
+          alert('complete animation!');
+        });
+      });
+    });
+  </script>
+</head>
+<body>
+  <input type="button" id="btn1" value="fadeIn/fadeOut">
+  <div id="div1"></div>
+</body>
+</html>
