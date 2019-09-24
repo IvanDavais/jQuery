@@ -1,0 +1,137 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Hierarchical Menu</title>
+
+  <style type="text/css">
+    body{
+      font-family:'Microsoft Yahei';
+    }
+    body,ul{
+      margin:0px;
+      padding:0px;
+    }
+
+    ul{list-style:none;}
+
+
+    .menu{
+      width:200px;
+      margin:20px auto 0;
+    }
+
+    .menu .level1,.menu li ul a{
+      display:block;
+      width:200px;
+      height:30px;
+      line-height:30px;
+      text-decoration:none;
+      background-color:#3366cc;
+      color:#fff;
+      font-size:16px;
+      text-indent:10px;
+    }
+
+    .menu .level1{
+      border-bottom:1px solid #afc6f6;
+    }
+
+    .menu li ul a{
+      font-size:14px;
+      text-indent:20px;
+      background-color:#7aa1ef;
+    }
+
+    .menu li ul li{
+      border-bottom:1px solid #afc6f6;
+    }
+
+
+    .menu li ul{
+      display:none;
+    }
+
+    .menu li ul.current{
+      display:block;
+    }
+
+    .menu li ul li a:hover{
+      background-color:#f6b544;
+    }
+
+
+  </style>
+
+  <script type="text/javascript" src="js1.12.4/jquery-1.12.4.min.js"></script>
+
+  <script type="text/javascript">
+
+    $(function(){
+
+      $('.level1').click(function(){
+
+        //当前点击的元素紧挨的同辈元素向下展开，再跳到此元素的父级(li),再跳到此父级的其他的同辈元素(li),选择其他同辈元素(li)的子元素ul，然后将它向上收起。
+
+        // Use stop() to correct the problem of continuous animation caused by repeated clicks.
+        $(this).next().stop().slideToggle().parent().siblings().children('ul').slideUp();
+
+
+
+
+      })
+
+    })
+
+  </script>
+</head>
+<body>
+  <ul class="menu">
+    <li>
+      <a href="#" class="level1">Fruit</a>
+      <ul class="current">
+        <li><a href="#">Apple</a></li>
+        <li><a href="#">Pear</a></li>
+        <li><a href="#">Grape</a></li>
+        <li><a href="#">Dragon Fruit</a></li>
+      </ul>
+    </li>
+    <li>
+      <a href="#" class="level1">Sea Food</a>
+      <ul>
+        <li><a href="#">Razor fish</a></li>
+        <li><a href="#">Scallop</a></li>
+        <li><a href="#">Lobster</a></li>
+        <li><a href="#">Elephant</a></li>
+      </ul>
+    </li>
+    <li>
+      <a href="#" class="level1">Meat</a>
+      <ul>
+        <li><a href="#">Inner Mongolia Mutton</a></li>
+        <li><a href="#">Imported beef</a></li>
+        <li><a href="#">Wild pork</a></li>
+      </ul>
+    </li>
+    <li>
+      <a href="#" class="level1">Vegetables</a>
+      <ul>
+        <li><a href="#">Baby dish</a></li>
+        <li><a href="#">Tomato</a></li>
+        <li><a href="#">Celery</a></li>
+        <li><a href="#">Carrot</a></li>
+      </ul>
+    </li>
+    <li>
+      <a href="#" class="level1">Quick freezing</a>
+      <ul>
+        <li><a href="#">Ice cream</a></li>
+        <li><a href="#">Wan Chai Ferry Pier</a></li>
+        <li><a href="#">Sea cucumber</a></li>
+        <li><a href="#">Beef ball</a></li>
+      </ul>
+    </li>
+
+  </ul>
+</body>
+</html>
