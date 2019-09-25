@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Document</title>
+  <script type="text/javascript" src="js1.12.4/jquery-1.12.4.min.js"></script>
+  <script type="text/javascript">
+    $(function(){
+      $btn = $('#btn');
+      $box = $('.box');
+      $btn1 = $('#btn1');
+      $box1 = $('.box1');
+
+      $btn.click(function()
+      {
+        $box.animate({'width':'500px'},1000,function(){
+          $box.animate({'height':"600px"},1000,function(){
+            $box.animate({'opacity':'0'},1000);
+          })
+        });
+      });
+
+      $btn1.click(function(){
+        // this approach exists some little error need to use ‘stop‘ method to solve it.
+        $box1.animate({'width':'+=100'});
+      })
+    })
+  </script>
+  <style type="text/css">
+    #btn,#btn1{
+      width: 80px;
+      height: 40px;
+      border-radius: 10px;
+      background-color: cyan;
+      cursor:pointer;
+      margin-bottom: 10px;
+    }
+
+    #btn:hover{
+      background-color: gold;
+    }
+    .box,.box1{
+      width: 200px;
+      height: 100px;
+      background-color: gold;
+    }
+  </style>
+</head>
+<body>
+  <input type="button" value="Animation" id="btn">
+  <div class="box"></div>
+  <br>
+  <br>
+  <input type="button" value="Animation" id="btn1">
+  <div class="box1"></div>
+</body>
+</html>
