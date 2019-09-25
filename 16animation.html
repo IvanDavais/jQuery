@@ -22,7 +22,8 @@
 
       $btn1.click(function(){
         // this approach exists some little error need to use ‘stop‘ method to solve it.
-        $box1.animate({'width':'+=100'});
+        // $box1.animate({'width':'+=100'});
+        $box1.stop().animate({'width':'+=100'})
       })
     })
   </script>
