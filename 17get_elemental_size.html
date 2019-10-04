@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>get elemental size</title>
+  <script type="text/javascript" src="js1.12.4/jquery-1.12.4.min.js" ></script>
+  <script type="text/javascript">
+    $(function(){
+      $box = $('.box');
+      //The size of the content of box
+      console.log($box.width());
+      console.log($box.height());
+
+      //The size of the content of box plus padding
+      console.log($box.innerWidth());
+      console.log($box.innerHeight());
+
+      //The actual size of the content of box, which includes content + paddind + border
+      console.log($box.outerWidth());
+      console.log($box.outerHeight());
+
+      //The actual size of the content of box, which includes content + padding + border + margin
+      console.log($box.outerWidth(true));
+      console.log($box.outerHeight(true));
+    })
+  </script>
+  <style type="text/css">
+    .box{
+      width:300px;
+      height: 100px;
+      padding: 50px;
+      border: 20px;
+      margin: 30px;
+      background-color: gold;
+    }
+  </style>
+</head>
+<body>
+  <div class="box"></div>
+</body>
+</html>
