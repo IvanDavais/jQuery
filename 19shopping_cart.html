@@ -52,6 +52,7 @@
       var $btn = $('.add');
       var $point = $('.point');
 
+      // '.outerWidth' includes the width, padding and border.
       var $w01 = $btn.outerWidth();
       var $h01 = $btn.outerHeight();
 
@@ -62,9 +63,12 @@
         var oPos01 = $btn.offset();
         var oPos02 = $cart.offset();
 
+        //move the dot into the button of 'add to cart', the number 8 present half of width of 'dot'.
         $point.css({'left':oPos01.left + parseInt($w01/2)-8,'top':oPos01.top + parseInt($h01/2)-8});
         $point.show();
 
+        //Make an animation which you click the 'add to cart' button, and the dot will move form this button to cart.
+        //Use an embedded function to control the disappearance of dot and the increase of the number in the cart.
         $point.stop().animate({'left':oPos02.left + parseInt($w02/2)-8,'top':oPos02.top + parseInt($h02/2)-8},function(){
           $point.hide();
 
