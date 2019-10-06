@@ -5,9 +5,11 @@
   <title>top menu</title>
   <script type="text/javascript" src="js1.12.4/jquery-1.12.4.min.js"></script>
   <script type="text/javascript">
-    $(function(){
+    $(function()
+    {
       var $menu = $('.menu');
       var $menu_backup = $('.menu_backup');
+      var $to_the_top = $('.to_the_top');
       $(window).scroll(function(){
         //The following sentence must be wrapped in the function of '$(window).scroll(function(){})',or it will exist errors.
         var $scrollTop = $(document).scrollTop();
@@ -24,9 +26,12 @@
           // Use 'menu_backup' to fill 'menu' because of the gap left by the document stream
           $menu_backup.css({
             'display':'block'
-          })
+          });
+          // notice: fadeIn() not fideIn()
+          $to_the_top.fadeIn();
         }
-        else{
+        else
+        {
           $menu.css({
             'position':'static',
             // error-prone point:'auto' must use '' token wrap it.
@@ -34,8 +39,12 @@
           });
           $menu_backup.css({
             'display':'none'
-          })
+          });
+          $to_the_top.fadeOut();
         }
+      })
+      $to_the_top.click(function(){
+        $('html,body').animate({'scrollTop':0});
       })
     })
   </script>
@@ -67,16 +76,32 @@
     p{
       text-align: center;
     }
+    .to_the_top{
+      width: 60px;
+      height: 60px;
+      background-color: #000;
+      color: #fff;
+      line-height: 60px;
+      text-align: center;
+      position: fixed;
+      right: 40px;
+      bottom: 60px;
+      border-radius: 50%;
+      font-size: 40px;
+      display: none;
+    }
   </style>
 
 </head>
 <body>
   <div class="banner"></div>
   <div class="menu">Menu</div>
-  <!-- There needs plugin a div to solve the bug which the first 'Document content'
+  <!-- There needs embed a div to solve the bug which the first 'Document content'
     will hide behind the 'menu' element when the window scroll to 200px from the top
     because of detachment of 'normal flow' the 'menu' element.  -->
   <div class="menu_backup"></div>
+  <!-- add an icon to scroll up to the top -->
+  <div class="to_the_top">⬆</div>
   <p>Document Content</p>
   <br />
   <br />
