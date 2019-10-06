@@ -1,0 +1,117 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>top menu</title>
+  <script type="text/javascript" src="js1.12.4/jquery-1.12.4.min.js"></script>
+  <script type="text/javascript">
+    $(function(){
+      var $menu = $('.menu');
+      $(window).scroll(function(){
+        //The following sentence must be wrapped in the function of '$(window).scroll(function(){})',or it will exist errors.
+        var $scrollTop = $(document).scrollTop();
+        if($scrollTop>200){
+          $menu.css(
+            {
+            // How to centre a fixedly positioned element?
+            'position':'fixed',
+            'top':0,
+            'left':'50%',
+            'marginLeft':'-480px'
+            });
+        }
+        else{
+          $menu.css({
+            'position':'static',
+            // error-prone point:'auto' must use '' token wrap it.
+            'marginLeft':'auto'
+          })
+        }
+      })
+    })
+  </script>
+  <style type="text/css">
+    body{
+      margin: 0;
+      padding: 0;
+    }
+    .banner{
+      width: 960px;
+      height: 200px;
+      background-color: yellow;
+      margin:0 auto;
+    }
+    .menu{
+      width: 960px;
+      height: 80px;
+      line-height: 80px;
+      background-color: cyan;
+      text-align: center;
+      margin:0 auto;
+    }
+    p{
+      text-align: center;
+    }
+  </style>
+
+</head>
+<body>
+  <div class="banner"></div>
+  <div class="menu">Menu</div>
+  <p>Document Content</p>
+  <br />
+  <br />
+  <br />
+  <br />
+  <br />
+  <p>Document Content</p>
+  <br />
+  <br />
+  <br />
+  <br />
+  <br />
+  <p>Document Content</p>
+  <br />
+  <br />
+  <br />
+  <br />
+  <br />
+  <p>Document Content</p>
+  <br />
+  <br />
+  <br />
+  <br />
+  <br />
+  <p>Document Content</p>
+  <br />
+  <br />
+  <br />
+  <br />
+  <br />
+  <p>Document Content</p>
+  <br />
+  <br />
+  <br />
+  <br />
+  <br />
+  <p>Document Content</p>
+  <br />
+  <br />
+  <br />
+  <br />
+  <br />
+  <p>Document Content</p>
+  <br />
+  <br />
+  <br />
+  <br />
+  <br />
+  <p>Document Content</p>
+  <br />
+  <br />
+  <br />
+  <br />
+  <br />
+  <p>Document Content</p>
+</body>
+</html>
