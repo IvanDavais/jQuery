@@ -7,10 +7,12 @@
   <script type="text/javascript">
     $(function(){
       var $menu = $('.menu');
+      var $menu_backup = $('.menu_backup');
       $(window).scroll(function(){
         //The following sentence must be wrapped in the function of '$(window).scroll(function(){})',or it will exist errors.
         var $scrollTop = $(document).scrollTop();
-        if($scrollTop>200){
+        if($scrollTop>200)
+        {
           $menu.css(
             {
             // How to centre a fixedly positioned element?
@@ -19,12 +21,19 @@
             'left':'50%',
             'marginLeft':'-480px'
             });
+          // Use 'menu_backup' to fill 'menu' because of the gap left by the document stream
+          $menu_backup.css({
+            'display':'block'
+          })
         }
         else{
           $menu.css({
             'position':'static',
             // error-prone point:'auto' must use '' token wrap it.
             'marginLeft':'auto'
+          });
+          $menu_backup.css({
+            'display':'none'
           })
         }
       })
@@ -49,6 +58,12 @@
       text-align: center;
       margin:0 auto;
     }
+    .menu_backup{
+      width: 960px;
+      height: 80px;
+      margin:0;
+      display: none;
+    }
     p{
       text-align: center;
     }
@@ -58,6 +73,10 @@
 <body>
   <div class="banner"></div>
   <div class="menu">Menu</div>
+  <!-- There needs plugin a div to solve the bug which the first 'Document content'
+    will hide behind the 'menu' element when the window scroll to 200px from the top
+    because of detachment of 'normal flow' the 'menu' element.  -->
+  <div class="menu_backup"></div>
   <p>Document Content</p>
   <br />
   <br />
