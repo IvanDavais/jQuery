@@ -1,0 +1,78 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>mouse event</title>
+  <script type="text/javascript" src="js1.12.4/jquery-1.12.4.min.js"></script>
+  <script type="text/javascript">
+    $(function(){
+      $box1 =$('.box1');
+      $box2 =$('.box2');
+      $box3 =$('.box3');
+      $box4 =$('.box4');
+
+
+      //There are some bug when using mouseover and mouseout.
+      $box1.mouseover(function(){
+        $box1.css({backgroundColor:'cyan'});
+      })
+      $box1.mouseout(function(){
+        $box1.css({backgroundColor:'glod'});
+      })
+
+      $box3.mouseenter(function(){
+        $box3.css({backgroundColor:'cyan'})
+      })
+      $box3.mouseleave(function(){
+        $box3.css({backgroundColor:'gold'})
+      })
+      $box4.mouseenter(function(){
+        $box4.css({backgroundColor:'cyan'})
+      })
+      $box4.mouseleave(function(){
+        $box4.css({backgroundColor:'gold'})
+      }) 
+    })
+  </script>
+  <style type="text/css">
+    .box1{
+      width: 200px;
+      height: 200px;
+      background: gold;
+    }
+    .box2{
+      width: 100px;
+      height: 100px;
+      background-color: red;
+      margin:50px auto 50px;
+    }
+    .box3{
+      width: 200px;
+      height: 200px;
+      background: gold;
+      margin-top: 20px;
+    }
+    .box4{
+      width: 100px;
+      height: 100px;
+      background-color: red;
+      margin:50px auto 50px;
+    }
+
+    /*tackle the collapse of margin-top*/
+    .clearfix::before{
+      content: "";
+      display: table;
+    }
+  </style>
+</head>
+<body>
+  <div class="box1 clearfix">
+    <div class="box2"></div>
+  </div>
+
+  <div class="box3 clearfix">
+    <div class="box4"></div>
+  </div>
+</body>
+</html>

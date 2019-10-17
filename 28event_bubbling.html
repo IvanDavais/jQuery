@@ -1,0 +1,67 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Event bubbling</title>
+  <script type="text/javascript" src="js1.12.4/jquery-1.12.4.min.js"></script>
+  <script type="text/javascript">
+    $(function(){
+      $grandfather = $('.grandfather');
+      $father = $('.father');
+      $son = $('.son');
+
+      // When you click the div of 'son', the windows will alert 1, 2, 3 in sequence.
+      // This phenomenon is called event bubbling.
+      $son.click(function(event){
+        alert('1')
+        //how to deter event bubbling?
+        //event.stopPropagation();
+      })
+      $father.click(function(event){
+        alert('2')
+        event.stopPropagation();
+      })
+      $grandfather.click(function(){
+        alert('3')
+        // A unified way to prevent event bubbling and prevent preset behavior.
+        return false;
+      })
+      $(document).click(function(){
+        alert('4')
+      })
+    })
+  </script>
+  <style type="text/css">
+    body{
+      margin: 0;
+      padding: 0;
+    }
+    .grandfather{
+      width: 300px;
+      height: 300px;
+      background-color:gold;
+      position: relative;
+    }
+    .father{
+      width: 200px;
+      height: 200px;
+      background-color: cyan;
+    }
+    .son{
+      width: 100px;
+      height: 100px;
+      background-color: red;
+      position:absolute;
+      left: 0;
+      top: 400px;
+    }
+  </style>
+</head>
+<body>
+  <div class="grandfather">
+    <div class="father">
+      <div class="son"></div>
+    </div>
+  </div>
+</body>
+</html>

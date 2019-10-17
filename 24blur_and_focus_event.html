@@ -1,0 +1,23 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>blur and focus event</title>
+  <script type="text/javascript" src="js1.12.4/jquery-1.12.4.min.js"></script>
+  <script>
+    $(function(){
+      $text = $('.text');
+      $pwd = $('.pwd');
+      $text.focus();
+      $text.blur(function(){
+        alert('you have lost focus!')
+      });
+    })
+  </script>
+</head>
+<body>
+  <input type="text" class="text">
+  <input type="password" class="pwd">
+  <input type="submit" value="Submit">
+</body>
+</html>
