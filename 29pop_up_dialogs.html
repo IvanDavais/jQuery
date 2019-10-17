@@ -8,6 +8,8 @@
     $(function(){
       $('.btn').click(function(){
         $('.content').fadeIn();
+        // pretend event bubbling
+        // because the 'document' element also set a click event.
         return false;
       })
 
@@ -16,6 +18,8 @@
       })
 
       $('.pop_up').click(function(){
+        // Because the '.pop_up' element belong to the part of the 'document',
+        // So we need to plug a 'return false' to deter the event that clicks the '.pop_up' element then the 'content' also disappeared.
         return false;
       })
 
