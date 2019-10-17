@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>manipulate attributes</title>
+  <script type="text/javascript" src="js1.12.4/jquery-1.12.4.min.js"></script>
+  <script type="text/javascript">
+    $(function(){
+      $link = $('.link');
+      $img = $('.img');
+      $box = $('.box');
+      // read attribute
+      console.log($link.prop('class'));
+
+      // set attribute
+      $link.prop({'href':'www.baidu.com'});
+
+      // read attribute of image
+      // notice: prop will read the absolute path of image.
+      console.log($img.prop('src'));
+
+      // obtain content of html
+      console.log($link.html());
+
+      // set content of html
+      $box.html('Use html() to palce content in a div');
+    })
+  </script>
+</head>
+<body>
+  <a href="#" class="link">Baidu</a>
+  <img src="images/004-02.png" alt="girl" class="img">
+  <div class="box"></div>
+</body>
+</html>
