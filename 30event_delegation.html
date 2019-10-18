@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>event delegation</title>
+  <script type="text/javascript" src="js1.12.4/jquery-1.12.4.min.js"></script>
+  <script type="text/javascript">
+    $(function(){
+      //Adopt this approach will not alter colour of new 'li' when appending a new list in this 'ul' element.
+      /*$('.list li').click(function()
+      {
+        $(this).css({backgroundColor:'#000'});
+      })
+
+      var $new_list = $('<li>9</li>');
+      $('.list').append($new_list);
+
+      */
+
+
+      // event delegation:
+     $('.list').delegate('li','click',function(){
+      $(this).css({backgroundColor:'#000'});
+     })
+
+     var $new_list = $('<li>9</li>');
+     $('.list').append($new_list);
+
+    })
+  </script>
+
+  <style type="text/css">
+    .list{
+      height: 700px;
+      background-color: gold;
+      list-style: none;
+      padding: 10px;
+    }
+
+    .list li{
+      height: 60px;
+      margin:10px;
+      background-color: red;
+      list-style: none;
+    }
+  </style>
+</head>
+<body>
+  <ul class="list">
+    <li>1</li>
+    <li>2</li>
+    <li>3</li>
+    <li>4</li>
+    <li>5</li>
+    <li>6</li>
+    <li>7</li>
+    <li>8</li>
+  </ul>
+</body>
+</html>
