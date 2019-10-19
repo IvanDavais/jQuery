@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>css animation</title>
+  <script type="text/javascript" src="js1.12.4/jquery-1.12.4.min.js"></script>
+  <script type="text/javascript">
+    $(function(){
+      $btn = $('#btn');
+      $box = $('.box');
+
+      $btn.click(function(){
+        $box.addClass('moving');
+      })
+    })
+  </script>
+  <style type="text/css">
+    .box{
+      width: 300px;
+      height: 300px;
+      background-color: yellow;
+      position: relative;
+      left: 300px;
+      top: 200px;
+
+      /*The transition CSS property is a shorthand property for transition-property,
+      transition-duration, transition-timing-function, and transition-delay.*/
+      transition:all 1s ease;
+    }
+
+    .moving{
+      transform:rotate(135deg);
+    }
+  </style>
+</head>
+<body>
+  <input type="button" value="Animation" id='btn'>
+  <div class="box"></div>
+</body>
+</html>
