@@ -1,0 +1,157 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>To do list</title>
+  <style type="text/css">
+    .clearfix:before, .clearfix:after{
+      content:"";
+      display: table;
+    }
+    .clearfix:after{
+      clear:both;
+    }
+
+    .content{
+      width: 800px;
+      height: 800px;
+      /*border: 1px solid #000;*/
+      margin:40px auto;
+      padding: 30px;
+      text-align: center;
+      position: relative;
+    }
+
+    .input_area{
+      width: 100%;
+      height: 60px;
+      /*border: 1px solid cyan;*/
+    }
+
+    .text{
+      width: 400px;
+      height: 40px;
+      float: left;
+      margin-left: 100px;
+      margin-top:9px;
+      font-size: 18px;
+    }
+
+    .btn{
+      width: 100px;
+      height: 40px;
+      line-height: 40px;
+      border-radius: 30%;
+      float: right;
+      margin-right: 80px;
+      margin-top:9px;
+      background-color: cyan;
+      display: block;
+    }
+
+    .list{
+      width: 700px;
+      position: absolute;
+      /*border: 1px solid red;*/
+      left: 50px;
+
+    }
+
+    .list li{
+      padding: 10px;
+      width: 600px;
+      height: 30px;
+      /*border: 1px solid #000;*/
+      border-bottom: 1px solid red;
+
+    }
+
+    .item_name{
+      float:left;
+
+    }
+    .del,.up,.down{
+      float: right;
+      margin-right: 5px;
+      text-decoration: none;
+    }
+  </style>
+  <script type="text/javascript" src="js1.12.4/jquery-1.12.4.min.js"></script>
+  <script type="text/javascript">
+    $(function(){
+      $text = $('.text');
+      $btn = $('.btn');
+      $list = $('.list');
+      $item_name = $('.item_name');
+      $del = $('.del');
+      $up = $('.up');
+      $down = $('.down');
+
+      $btn.click(function(){
+        var $val = $text.val();
+        if($val=='')
+          {
+            alert('empty input! try again!');
+            return;
+          }
+          $list.append('<li><span class="item_name">'+$val+'</span><a href="javascript:;" class="del">Delete</a><a href="javascript:;" class="up">⬆</a><a href="javascript:;" class="down">⬇</a>      </li>')
+      })
+
+      $list.delegate('a','click',function(){
+        $cls_name = $(this).prop('class');
+        if($cls_name=='del')
+        {
+          $(this).parent().remove();
+        }
+        if($cls_name=='up')
+        {
+          if($(this).parent().prev().length==0)
+          {
+            alert('Already at the top!');
+            return;
+          }
+          $(this).parent().insertBefore($(this).parent().prev())
+        }
+        if($cls_name=='down')
+        {
+          if($(this).parent().next().length==0)
+          {
+            alert('Already at the bottom!');
+            return;
+          }
+          $(this).parent().insertAfter($(this).parent().next())
+        }
+
+      })
+    })
+  </script>
+</head>
+<body>
+  <div class="content">
+    <div class="input_area">
+      <input type="text" class="text">
+      <button type="button" class="btn clearfix" >Add Item</button>
+    </div>
+    <ol class="list clearfix">
+      <li>
+        <span class="item_name">python</span>
+        <a href="javascript:;" class="del">Delete</a>
+        <a href="javascript:;" class="up">⬆</a>
+        <a href="javascript:;" class="down">⬇</a>
+      </li>
+      <li>
+        <span class="item_name">java</span>
+        <a href="javascript:;" class="del">Delete</a>
+        <a href="javascript:;" class="up">⬆</a>
+        <a href="javascript:;" class="down">⬇</a>
+      </li>
+      <li>
+        <span class="item_name">matlab</span>
+        <a href="javascript:;" class="del">Delete</a>
+        <a href="javascript:;" class="up">⬆</a>
+        <a href="javascript:;" class="down">⬇</a>
+      </li>
+    </ol>
+  </div>
+</body>
+</html>
