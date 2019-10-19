@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Create Node</title>
+  <script type="text/javascript" src="js1.12.4/jquery-1.12.4.min.js"></script>
+  <script type="text/javascript">
+    $(function(){
+      // html()
+      var $div = $('.div1');
+      var $div2 = $('.div2');
+      $div.html('how are you!');
+
+      // create an empty div element
+      // var $div1 = $('<div>');
+
+      // create an div element
+      // var $div2 =$('<div>I am new div</div>');
+
+      //apend()
+      var $span = $('<span>a span tag</span>')
+      // $div.append($span);
+
+      //appendTo()
+      $span.appendTo($div);
+
+      //note: here can't use "herf= http://www.baidu.com",cause there are already "" symbol.
+      var $a = $("<a href='http://www.baidu.com'>link</a>");
+
+      // prepend()
+      // $div2.prepend($a);
+
+      // prependTo()
+      $a.prependTo($div2);
+
+      // after()
+      var $h1 = $('<h1>h1 element</h1>')
+      // $div2.after($h1);
+
+      // insertAfter()
+      $h1.insertAfter($div2);
+
+      //before()
+      var $list = $('<ul><li>1</li><li>2</li></ul>')
+      $div.before($list);
+
+      //insertBefore()
+      $list.insertBefore($div);
+
+      //remove()
+      // $list.remove();
+    })
+  </script>
+</head>
+<body>
+  <div class="div1">hello</div>
+  <div2 class="div2">world!</div2>
+</body>
+</html>
