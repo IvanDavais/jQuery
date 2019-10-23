@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>index</title>
+  <script type="text/javascript" src="jquery-1.12.4.min.js"></script>
+  <script type="text/javascript">
+    $(function()
+    {
+      $.ajax({
+        url:'data.json',
+        type:'GET',
+        dataType:'json'
+      })
+      .done(function(dat){
+        // alert(dat.name);
+        $('#username').html(dat.name);
+        $('#userage').html(dat.age);
+
+      })
+      .fail(function(){
+        alert('connection time out!');
+      })
+    })
+  </script>
+</head>
+<body>
+  <h1>test</h1>
+  <span id="username"></span>
+  <br>
+  <span id="userage"></span>
+</body>
+</html>
