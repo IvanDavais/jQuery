@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>slider</title>
+  <script type="text/javascript" src="js1.12.4/jquery-1.12.4.min.js"></script>
+  <script type="text/javascript" src="js1.12.4/jquery-ui.min.js"></script>
+  <script type="text/javascript">
+    $(function(){
+      $('.box').draggable({
+        axis:'x',
+        containment:'parent',
+        opacity:0.6,
+
+        drag:function(ev,ui){
+          // console.log(ui.offset.left);
+          var num = ui.offset.left;
+          $('#num').val(num/439*100);
+        }
+      })
+    })
+  </script>
+  <style type="text/css">
+    .content{
+      width: 800px;
+      height: 200px;
+      border: 1px solid #000;
+      margin:50px auto;
+    }
+
+    .box{
+      width: 100px;
+      height: 200px;
+      background-color: yellow;
+    }
+    #num{
+      width: 80px;
+      height: 200px;
+      position:absolute;
+      top: 50px;
+      right: 300px;
+    }
+  </style>
+</head>
+<body>
+  <div class="content">
+    <div class="box"></div>
+  </div>
+  <input type="text" id='num'>
+</body>
+</html>
