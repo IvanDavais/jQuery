@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Document</title>
+  <script type="text/javascript" src="jquery-1.12.4.min.js"></script>
+  <script type="text/javascript">
+    $.ajax({
+      url:'https://sug.so.360.cn/suggest?',
+      type:'get',
+      dataType:'jsonp',
+      data:{'word':'d'}
+    })
+    .done(function(data){
+      console.log(data);
+    })
+  </script>
+</head>
+<body>
+  <p>https://sug.so.360.cn/suggest?</p>
+  <input type="text" placeholder="please enter some words you want to search" id="text1">
+  <ul id="list">
+    
+  </ul>
+</body>
+</html>
