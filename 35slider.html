@@ -2,50 +2,84 @@
 <html lang="en">
 <head>
   <meta charset="UTF-8">
-  <title>slider</title>
+  <title>drag</title>
   <script type="text/javascript" src="js1.12.4/jquery-1.12.4.min.js"></script>
   <script type="text/javascript" src="js1.12.4/jquery-ui.min.js"></script>
   <script type="text/javascript">
     $(function(){
-      $('.box').draggable({
+      $('.dragbar').draggable({
         axis:'x',
+
         containment:'parent',
+        //containment:[0,0,600,0]
+        
+
         opacity:0.6,
 
         drag:function(ev,ui){
-          // console.log(ui.offset.left);
-          var num = ui.offset.left;
-          $('#num').val(num/439*100);
+          //console.log(ui.position.left);
+
+          var nowleft = ui.position.left;
+          $('.progress').css({width:nowleft});
+          $('.slide_count').val(parseInt(nowleft*100/570));
         }
-      })
+
+      });
     })
   </script>
   <style type="text/css">
-    .content{
-      width: 800px;
-      height: 200px;
-      border: 1px solid #000;
-      margin:50px auto;
+    .slidebar_con{
+      width:650px;
+      height:32px;
+      margin:50px auto 0;
     }
 
-    .box{
-      width: 100px;
-      height: 200px;
-      background-color: yellow;
+    .slidebar{
+      width:600px;
+      height:30px;
+      border:1px solid #ccc;
+      float:left;
+      position:relative;
     }
-    #num{
-      width: 80px;
-      height: 200px;
+
+    .slidebar .dragbar{
+      width:30px;
+      height:30px;
+      background-color:gold;
+      cursor:pointer;
       position:absolute;
-      top: 50px;
-      right: 300px;
+      left:0;
+      top:0;
     }
+
+    .slidebar .progress{
+      width:0px;
+      height:30px;
+      background-color:#f0f0f0;
+      position:absolute;
+      left:0;
+      top:0;
+    }
+
+    .slide_count{
+      padding:0;
+      float:right;
+      width:40px;
+      height:30px;
+      border:1px solid #ccc;
+      text-align:center;
+      font-size:16px;
+    }
+
   </style>
 </head>
 <body>
-  <div class="content">
-    <div class="box"></div>
+  <div class="slidebar_con">
+    <div class="slidebar">
+      <div class="progress"></div>
+      <div class="dragbar"></div>
+    </div>
+    <input type="text" name="" value="0" class="slide_count">
   </div>
-  <input type="text" id='num'>
 </body>
 </html>
