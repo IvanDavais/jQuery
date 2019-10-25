@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>bootstrap container</title>
+  <script type="text/javascript" src="js/jquery-1.12.4.min.js"></script>
+  <script type="text/javascript" src="js/bootstrap.min.js"></script>
+  <link rel="stylesheet" href="css/bootstrap.min.css">
+  <style type="text/css">
+    .container-fluid{
+      height: 100px;
+      border: 1px solid #000;
+      background-color: gold;
+      line-height: 100px;
+      text-align: center;
+    }
+
+    .container{
+      height: 100px;
+      border: 1px solid #000;
+      background-color: cyan;
+      line-height: 100px;
+      text-align: center;
+    }
+
+  </style>
+
+
+  <script type="text/javascript">
+    $(function(){
+      // alert(width1);
+      $(window).resize(function()
+      {
+        var width1 = $('.container-fluid').css('width');
+        var width2 = $('.container').css('width');
+
+        $('.width1').html(width1);
+        $('.width2').html(width2);
+        // console.log(width1);
+      })
+    })
+  </script>
+</head>
+<body>
+  <div class="container-fluid">Container-fluid--> width:<span class="width1"></span></div>
+  <br>
+  <br>
+  <br>
+  <br>
+  <div class="container">Container--> width:<span class="width2"></span></div>
+</body>
+</html>
