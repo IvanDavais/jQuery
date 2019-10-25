@@ -1,0 +1,24 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>cookie test</title>
+  <script type="text/javascript" src="js1.12.4/jquery-1.12.4.min.js"></script>
+  <script type="text/javascript" src="js1.12.4/jquery.cookie.js"></script>
+  <script type="text/javascript">
+    //set cookie
+    //Incorrect version 'mycookie':'ok!'
+    // $.cookie('mycookie','ok!',{expires:7,path:'\/'});
+
+    //get cookie
+    //Because we had set cookies expires for 7 days, so we can use the blow sentence to get the cookie detail.
+
+    var mycookie = $.cookie('mycookie');
+    alert(mycookie);
+
+  </script>
+</head>
+<body>
+  <h1>test for cookie</h1>
+</body>
+</html>
