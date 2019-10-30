@@ -1,0 +1,163 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
+  <title>Document</title>
+  <link rel="stylesheet" type="text/css" href="css/bootstrap.min.css">
+  <script type="text/javascript" src="js/jquery-1.12.4.min.js"></script>
+  <script type="text/javascript" src="js/bootstrap.min.js"></script>
+  <style type="text/css">
+    
+    <!-- 可以使用css来改变搜索框中文字图片的样式，因为文字图片本森就是文字 -->
+    .glyphicon-heart{
+      font-size:16px;
+      color:gold;
+    }
+
+    .glyphicon-user{
+      font-size:20px;
+      color:pink;
+    }
+
+  </style>
+</head>
+<body>
+  <div class="container">
+    <div class="row">
+      <h2>表单</h2>
+    </div>
+  </div>
+
+
+  <div class="container">
+    <div class="row">
+
+      <!-- 一般表单 -->
+      <form>
+        <div class="form-group">
+           <!-- 不适用用户名，直接用span加字体图标 -->
+          <label for="input01"><span class="glyphicon glyphicon-user"></span></label>
+          <input type="text" name="" class="form-control" id="input01">
+        </div>
+
+        <div class="form-group">
+          <label for="pwd">密码:</label>
+          <input type="password" name="" class="form-control" id="pwd">
+        </div>
+      </form>
+      
+      <br>
+      <br>
+
+      <!-- 内连表单：排列在一行的表单 -->
+      <form class="form-inline">
+        <div class="form-group form-group-lg">
+          <!-- for:点击用户名也可以激活下面id未input02的表单 -->
+          <label for="input02">用户名:</label>
+          <input type="text" name="" class="form-control" id="input02">
+        </div>
+
+        <div class="form-group">
+          <label for="pwd02">密码:</label>
+          <input type="password" name="" class="form-control" id="pwd02">
+        </div>
+      </form>
+
+
+      <br>
+      <br>
+      <!-- 水平排列表单 使用栅格来操作lable和input的宽度-->
+      <form class="form-horizontal">
+        <!-- form-group-lg 大尺寸 -->
+        <div class="form-group form-group-lg">
+          <label for="input03" class="col-xs-2">用户名:</label>
+          <div class="col-xs-10">
+          <input type="text" name="" class="form-control" id="input03">
+          </div>
+        </div>
+
+        <!-- form-group-lg 大尺寸 -->
+        <div class="form-group form-group-sm">
+          <label for="input03" class="col-xs-2">通信地址:</label>
+          <div class="col-xs-10">
+          <input type="text" name="" class="form-control" id="input03">
+          </div>
+        </div>
+
+        <!-- 不设置form-group的时候为默认尺寸，即中等尺寸 -->
+        <div class="form-group">
+          <label for="pwd03"  class="col-xs-2">密码:</label>
+          <div class="col-xs-10">
+          <input type="password" name="" class="form-control" id="pwd03">
+          </div>
+        </div>
+
+
+      </form>
+      <br>
+      <br>
+      <br>
+      <!-- 表单控件组 -->
+      <form>
+        <div class="input-group">
+          <span class="input-group-addon">@</span>
+          <input type="text" class="form-control">          
+        </div>
+        <br>
+        <br>
+
+        <div class="input-group">
+          
+          <input type="text" class="form-control">
+          <span class="input-group-btn">
+            <!-- <input type="button" name="" value="搜索" class="btn btn-default"> -->
+
+            <button class="btn btn-primary">搜索</button>
+          </span>         
+        </div>
+        
+        <br>
+        <br>
+
+        <div class="input-group">
+          
+          <input type="text" class="form-control">
+          <span class="input-group-btn">
+            <!-- 使用input和文字做搜索按钮 -->
+            <!-- <input type="button" name="" value="搜索" class="btn btn-default"> -->
+
+            <!-- 使用button和文字做搜索按钮 -->
+            <!-- <button class="btn btn-primary">搜索</button> -->
+
+            <!-- 使用button和字体图标做搜索按钮 -->
+            <button class="btn btn-primary"><span class="glyphicon glyphicon-heart"></span></button>
+          </span>         
+        </div>
+
+          <br>
+        <br>
+          <br>
+        <br>
+          <br>
+        <br>
+          <br>
+        <br>
+          <br>
+        <br>
+
+          <br>
+        <br>
+
+      </form>
+
+
+
+    </div>
+  </div>
+
+
+
+
+</body>
+</html>
